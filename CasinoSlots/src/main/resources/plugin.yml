@@ -1,0 +1,21 @@
+name: CasinoSlots
+version: '${project.version}'
+main: com.casino.slots.CasinoPlugin
+api-version: '1.21'
+author: Claude
+description: Tragaperras 3D animadas con monedas y premios aleatorios.
+commands:
+  casino:
+    description: Administración del casino
+    usage: /casino <give|remove|list|reload|pack>
+    aliases: [tragaperras, slots]
+permissions:
+  casino.play:
+    description: Poder jugar en las tragaperras
+    default: true
+  casino.place:
+    description: Poder colocar tragaperras
+    default: op
+  casino.admin:
+    description: Comandos y romper tragaperras
+    default: op
