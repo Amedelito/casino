@@ -1,0 +1,69 @@
+# ==========================================================
+#  CasinoSlots - configuración
+# ==========================================================
+
+# Probabilidad de que las 3 casillas salgan iguales (0.0 - 1.0).
+# 0.08 = 8 %. Súbela o bájala para hacer el casino más o menos generoso.
+win-chance: 0.08
+
+# Avisar a todo el servidor cuando alguien gana
+broadcast-wins: true
+
+# Resource pack (los modelos 3D). Puedes dejarlo vacío y ponerlo en server.properties.
+resource-pack:
+  url: ""        # enlace DIRECTO de descarga al zip
+  sha1: ""       # SHA-1 del zip (opcional pero recomendado)
+  force: false
+  prompt: "Pack del casino: tragaperras 3D"
+
+prefix: "<gold>[<yellow>Casino</yellow>]</gold> "
+
+messages:
+  no-permission: "<red>No tienes permiso para eso."
+  need-coin: "<red>Necesitas una <gold>moneda del casino</gold> en la mano para jugar."
+  busy: "<yellow>La máquina está en uso, espera un momento."
+  lose: "<gray>Sin suerte... <white>¡Prueba otra vez!"
+  win: "<green>¡PREMIO! <white>Has ganado <item>"
+  win-broadcast: "<gold>🎰 <yellow><player></yellow> <white>ha sacado <gold>tres <symbol></gold> y se ha llevado <item><white> en la tragaperras!"
+  placed: "<green>Tragaperras colocada."
+  cannot-place: "<red>No hay sitio: necesitas 2 bloques de alto libres."
+  removed: "<yellow>Tragaperras eliminada."
+  no-machine: "<red>No hay ninguna tragaperras cerca/apuntada."
+  reloaded: "<green>Configuración recargada."
+  given: "<green>Has dado <white><amount>x <what></white> a <white><player></white>."
+  received: "<green>Has recibido <white><amount>x <what></white>."
+
+# ----------------------------------------------------------
+#  PREMIOS (se elige UNO al azar, según 'weight' = peso)
+#  material : cualquier Material de Bukkit
+#  min/max  : cantidad (si no pones nada es 1)
+#  weight   : probabilidad relativa (más alto = más común)
+#  enchants : encantamientos (permite niveles por encima del vanilla)
+#  name     : nombre personalizado (MiniMessage)
+# ----------------------------------------------------------
+rewards:
+  - { material: DIAMOND_BLOCK,          min: 2, max: 5,  weight: 14 }
+  - { material: EMERALD_BLOCK,          min: 4, max: 9,  weight: 10 }
+  - { material: NETHERITE_INGOT,        min: 1, max: 2,  weight: 10 }
+  - { material: ENCHANTED_GOLDEN_APPLE, min: 1, max: 2,  weight: 10 }
+  - { material: TOTEM_OF_UNDYING,       min: 1, max: 1,  weight: 12 }
+  - { material: EXPERIENCE_BOTTLE,      min: 32, max: 64, weight: 12 }
+  - { material: ANCIENT_DEBRIS,         min: 4, max: 8,  weight: 8 }
+  - { material: ELYTRA,                 weight: 6 }
+  - { material: TRIDENT,                weight: 5 }
+  - { material: BEACON,                 weight: 5 }
+  - { material: NETHER_STAR,            weight: 5 }
+  - { material: SHULKER_BOX,            weight: 4 }
+  - { material: NETHERITE_BLOCK,        weight: 3 }
+  - material: NETHERITE_SWORD
+    weight: 4
+    name: "<gold><bold>Espada del Casino"
+    enchants: { sharpness: 5, unbreaking: 3, looting: 3, fire_aspect: 2, mending: 1, sweeping_edge: 3 }
+  - material: NETHERITE_PICKAXE
+    weight: 4
+    name: "<gold><bold>Pico del Casino"
+    enchants: { efficiency: 6, unbreaking: 4, fortune: 4, mending: 1 }
+  - material: NETHERITE_CHESTPLATE
+    weight: 3
+    name: "<gold><bold>Pechera del Casino"
+    enchants: { protection: 5, unbreaking: 4, mending: 1 }
